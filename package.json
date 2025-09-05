@@ -1,13 +1,28 @@
 {
   "name": "tamper-monkey-scripts",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Collection of Tampermonkey scripts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node build.js",
+    "dev": "concurrently \"chokidar build.js ./src/* -c 'node build.js'\" \"node server.js\""
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "packageManager": "pnpm@10.15.0"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coyto/tampermonkey-scripts.git"
+  },
+  "keywords": [
+    "tampermonkey",
+    "scripts"
+  ],
+  "author": "coyto",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/coyto/tampermonkey-scripts/issues"
+  },
+  "packageManager": "pnpm@10.15.1",
+  "dependencies": {
+    "concurrently": "^9.2.1",
+    "express": "^5.1.0",
+    "chokidar-cli": "^3.0.0"
+  }
 }
